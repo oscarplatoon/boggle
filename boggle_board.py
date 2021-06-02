@@ -31,7 +31,10 @@ class BoggleBoard:
             while j < 4:
                 randomizer = random.randint(0, 15)
                 self.board[i][j] = ("".join(random.choice(boggle_dice[randomizer])))
-                print (len(self.board[i][j]))
+                if len(self.board[i][j]) == 2:
+                    self.board[i][j] += " "
+                else:
+                    self.board[i][j] += "  "
                 j += 1
             i += 1
         print("Every time you rattle the board, it's a: \nwhole \nnew \nworld\n")
