@@ -1,7 +1,11 @@
+import random
+import string
+
 class BoggleBoard:
     # I'll represent the board as a list of lists [[column1],[column2], [column3], [column4]] so boggle[i][j] gives:
     # i = row
     # j = column
+
 
     def __init__(self):
         self.board = self.blank_board()
@@ -17,7 +21,18 @@ class BoggleBoard:
         return(output_str)
 
     def shake(self):
-        print(self.board[0][1])
+        #if I use these letters elsewhere, I should move this.
+        letters = string.ascii_uppercase
+        i = 0
+        j = 0
+        while i < 4:
+            j=0
+            while j < 4:
+                self.board[i][j] = ("".join(random.choice(letters)))
+                j += 1
+            i += 1
+
+            
 
     #This is called at init to create a blank board.
     def blank_board(self):
@@ -33,4 +48,5 @@ class BoggleBoard:
 new_boggle = BoggleBoard()
 print(new_boggle)
 #print(new_boggle.board)
-#new_boggle.shake()
+new_boggle.shake()
+print(new_boggle)
