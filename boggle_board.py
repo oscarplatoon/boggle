@@ -22,13 +22,16 @@ class BoggleBoard:
 
     def shake(self):
         #if I use these letters elsewhere, I should move this.
-        letters = string.ascii_uppercase
+        #letters = string.ascii_uppercase
+        boggle_dice = [["A", "A", "E", "E", "G", "N"], ["E", "L", "R", "T", "T", "Y"], ["A", "O", "O", "T", "T", "W"], ["A", "B", "B", "J", "O", "O"], ["E", "H", "R", "T", "V", "W"], ["C", "I", "M", "O", "T", "U"], ["D", "I", "S", "T", "T", "Y"], ["E", "I", "O", "S", "S", "T"], ["D", "E", "L", "R", "V", "Y"], ["A", "C", "H", "O", "P", "S"], ["H", "I", "M", "N", "Qu", "U"], ["E", "E", "I", "N", "S", "U"], ["E", "E", "G", "H", "N", "W"], ["A", "F", "F", "K", "P", "S"], ["H", "L", "N", "N", "R", "Z"], ["D", "E", "I", "L", "R", "X"]]
         i = 0
         j = 0
         while i < 4:
             j=0
             while j < 4:
-                self.board[i][j] = ("".join(random.choice(letters)))
+                randomizer = random.randint(0, 15)
+                self.board[i][j] = ("".join(random.choice(boggle_dice[randomizer])))
+                print (len(self.board[i][j]))
                 j += 1
             i += 1
         print("Every time you rattle the board, it's a: \nwhole \nnew \nworld\n")
