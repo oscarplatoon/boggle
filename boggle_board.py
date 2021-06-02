@@ -10,7 +10,10 @@ class BoggleBoard:
     new_board = []
     for item in range(16):
       item = random.choice(string.ascii_letters).upper()
-      new_board.append(item)
+      if item == "Q":
+        new_board.append("Qu")
+      else:
+        new_board.append(item)
       if len(new_board) == 4:
         a = ''.join(new_board[0:2])
         b = ''.join(new_board[2:4])
