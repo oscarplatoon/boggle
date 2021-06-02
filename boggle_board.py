@@ -6,6 +6,16 @@ class BoggleBoard:
     def __init__(self):
         self.board = self.blank_board()
 
+    def __str__(self):
+        output_str = ""
+        for i in range(4):
+            line_str = ""
+            for char in self.board[i]:
+                line_str += char
+            line_str += "\n"
+            output_str += line_str
+        return(output_str)
+
     def shake(self):
         print(self.board[0][1])
 
@@ -21,5 +31,6 @@ class BoggleBoard:
         return output_list
 
 new_boggle = BoggleBoard()
-print(new_boggle.board)
-new_boggle.shake()
+print(new_boggle)
+#print(new_boggle.board)
+#new_boggle.shake()
