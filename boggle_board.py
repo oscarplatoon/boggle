@@ -31,6 +31,7 @@ class BoggleBoard:
                 self.board[i][j] = ("".join(random.choice(letters)))
                 j += 1
             i += 1
+        print("Every time you rattle the board, it's a: \nwhole \nnew \nworld\n")
 
             
 
