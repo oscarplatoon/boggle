@@ -25,7 +25,7 @@ class BoggleBoard:
           output += 'Qu'+ " "
         else:
           output += elem + "  "
-          
+
         elem_count += 1
         if elem_count == 4:
           output += "\n"
@@ -37,7 +37,23 @@ class BoggleBoard:
     for elem_index in range(len(self.board)):
       self.board[elem_index] = random.choice(string.ascii_letters).upper()
 
-  # def shake2(self)
+  def shake2(self):
+    dice_used = [False] * len(self.dice)
+    space_rolled = [False] * len(self.board)
+    while False in space_rolled:
+      space = random.randint(0, 15)
+      if not space_rolled[space]:
+        while False in dice_used:
+          die = random.randint(0, 15)
+          if not dice_used[die]:
+            self.board[space] = random.choice(self.dice[die])
+            dice_used[die] = True
+            break
+        space_rolled[space] = True
+
+
 myBoard = BoggleBoard()
 myBoard.shake()
+print(myBoard)
+myBoard.shake2()
 print(myBoard)
