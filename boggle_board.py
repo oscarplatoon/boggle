@@ -14,9 +14,6 @@ class BoggleBoard:
 		# dice list size MUST match size of board
 		assert(len(dice_list) == self.length ** 2)
 
-		if random_seed is not None:
-			self.randon_seed = random_seed
-
 		self.dice_list = dice_list
 
 		# initialize board with underscores
@@ -24,11 +21,15 @@ class BoggleBoard:
 		self.print_board()
 
 	def print_board(self):
+		i = 0
 		for i, x in enumerate(self.board):
-			print(x, end="")
+			# pad string based on character length (e.g. "Qu")
+			print(x.ljust(3, " "), end="")
+
 			# add a newline for every row
 			if (i + 1) % self.length == 0:
 				print("\n", end="")
+			i += 0
 
 		print("\n", end="")
 
