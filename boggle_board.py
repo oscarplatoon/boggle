@@ -13,7 +13,6 @@ class BoggleBoard:
   # def first_shake(self):
 
   
-  # @classmethod
   # def shake(self):
 
 # clear_board = BoggleBoard()
